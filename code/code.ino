@@ -135,16 +135,22 @@ void setup() {
   raise();
   calibrateY();
   calibrateX();
-  scans[0] = scan(45,27);
-  scans[1] = scan(55,27);
-
-  scans[2] = scan(75,27);
-  scans[3] = scan(85,27);
-
-  scans[4] = scan(105,27);
-  scans[5] = scan(115,27);
-
+  gotoPoint(0,150);
+  lower();
   goToPoint(0,0);
+  goToPoint(150,0);
+  raise();
+  goToPoint(0,0);
+  // scans[0] = scan(45,27);
+  // scans[1] = scan(55,27);
+
+  // scans[2] = scan(75,27);
+  // scans[3] = scan(85,27);
+
+  // scans[4] = scan(105,27);
+  // scans[5] = scan(115,27);
+
+  // goToPoint(0,0);
 }
 
 
