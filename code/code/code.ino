@@ -174,7 +174,7 @@ void setup() {
   // }
 }
 
-
+bool fl = true;
 void loop() {
   // Serial.print(bttn());
   // Serial.print(" ");
@@ -192,12 +192,18 @@ void loop() {
         drawShi();
         break;
       case 3:
-        bool fl;
-        while(fl)
+        fl = true;
+        while(analogRead(line_sensor_pins[7])<4000)
         {
-          for(int i = 0;i<8;i++)
-            fl = fl&&analogRead(line_sensor_pins[i]<4000);
-          stepperX.runSpeed();
+          // Serial.println(fl);
+          // for(int i = 0;i<8;i++)
+          // {
+          //   fl = fl&&analogRead(line_sensor_pins[i]<4000);
+          //   // Serial.print()
+          // }
+          // stepperX.runSpeed();
+          stepperX.setSpeed(2000);
+          stepperX.run();
         }
         
         break;
